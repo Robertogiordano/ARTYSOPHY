@@ -1,0 +1,16 @@
+<web-app>
+	<display-name>GestionVehiculos</display-name>
+	
+	<servlet>
+		<servlet-name>GetVehiculosServlet</servlet-name>
+		<servlet-class>services.GetVehiculosServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>GetVehiculosServlet</servlet-name>
+		<url-pattern>/getVehiculos</url-pattern>
+	</servlet-mapping>
+	
+	
+</web-app>
+
