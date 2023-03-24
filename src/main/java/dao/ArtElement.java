@@ -1,6 +1,6 @@
 package dao;
 
-public interface ArtElement {
+public interface ArtElement extends Comparable<ArtElement> {
     public String toString();
     public boolean equals(Object o);
     public int hashCode();

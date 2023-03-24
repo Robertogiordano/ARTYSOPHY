@@ -77,11 +77,13 @@ public class Artist implements ArtElement{
 
     @Override
     public String toString() {
-        return "Autor{" +
-                "name='" + name + '\'' +
+        return "Artist{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", birthYear=" + birthYear +
                 ", deathYear=" + deathYear +
                 ", description='" + description + '\'' +
+                ", wiki='" + wiki + '\'' +
                 '}';
     }
 
@@ -98,4 +100,10 @@ public class Artist implements ArtElement{
         return Objects.hash(id, name, birthYear, deathYear, description, wiki);
     }
 
+    public int compareTo(ArtElement o) {
+        if (this == o) return 0;
+        if (!(o instanceof Artist)) throw new RuntimeException();
+        Artist artist = (Artist) o;
+        return getId().compareTo(artist.getId());
+    }
 }

@@ -1,7 +1,7 @@
 package bbdd;
 
-import dao.Vehiculo;
-import manager.ConsultaVehiculos;
+
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -10,8 +10,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class TestConnectionDB {
-    private VehiculoDAO2 vdao;
-   /* @Before
+   /* private VehiculoDAO2 vdao;
+    @Before
     public void setConnectionTest() {
         System.out.println("Set connection...");
         vdao=new VehiculoDAO2(ConnectionManager.getConnection());

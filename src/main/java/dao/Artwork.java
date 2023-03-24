@@ -113,4 +113,12 @@ public class Artwork implements ArtElement{
     public int hashCode() {
         return Objects.hash(id, imgPath, name, year, autor_id, museum_id, description, wiki);
     }
+
+    @Override
+    public int compareTo(ArtElement o) {
+        if (this == o) return 0;
+        if (!(o instanceof Artwork)) throw new RuntimeException();
+        Artwork artwork = (Artwork) o;
+        return getId().compareTo(artwork.getId());
+    }
 }

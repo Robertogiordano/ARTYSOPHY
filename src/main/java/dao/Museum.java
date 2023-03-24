@@ -6,8 +6,8 @@ public class Museum implements ArtElement{
     private Integer id;
     private String name;
     private String street;
-    private Integer openingHour;
-    private Integer closingHour;
+    private String openingHour;
+    private String closingHour;
     private String phone;
     private String description;
     private Double price;
@@ -16,7 +16,7 @@ public class Museum implements ArtElement{
     private String googleMaps;
 
 
-    public Museum(Integer id, String name, String street, Integer openingHour, Integer closingHour, String phone, String description, Double price, String webpageUrl, String wiki, String googleMaps) {
+    public Museum(Integer id, String name, String street, String openingHour, String closingHour, String phone, String description, Double price, String webpageUrl, String wiki, String googleMaps) {
         this.id = id;
         this.name = name;
         this.street = street;
@@ -54,19 +54,19 @@ public class Museum implements ArtElement{
         this.street = street;
     }
 
-    public Integer getOpeningHour() {
+    public String getOpeningHour() {
         return openingHour;
     }
 
-    public void setOpeningHour(Integer openingHour) {
+    public void setOpeningHour(String openingHour) {
         this.openingHour = openingHour;
     }
 
-    public Integer getClosingHour() {
+    public String getClosingHour() {
         return closingHour;
     }
 
-    public void setClosingHour(Integer closingHour) {
+    public void setClosingHour(String closingHour) {
         this.closingHour = closingHour;
     }
 
@@ -121,7 +121,8 @@ public class Museum implements ArtElement{
     @Override
     public String toString() {
         return "Museum{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", street='" + street + '\'' +
                 ", openingHour=" + openingHour +
                 ", closingHour=" + closingHour +
@@ -145,5 +146,13 @@ public class Museum implements ArtElement{
     @Override
     public int hashCode() {
         return Objects.hash(id, name, street, openingHour, closingHour, phone, description, price, webpageUrl, wiki, googleMaps);
+    }
+
+    @Override
+    public int compareTo(ArtElement o) {
+        if (this == o) return 0;
+        if (!(o instanceof Museum)) throw new RuntimeException();
+        Museum museum = (Museum) o;
+        return getId().compareTo(museum.getId());
     }
 }

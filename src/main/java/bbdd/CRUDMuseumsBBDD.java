@@ -28,7 +28,7 @@ public class CRUDMuseumsBBDD implements DAOInterface {
     }
 
     public Museum getMuseumElement(ResultSet rs) throws SQLException {
-        Museum museum = new Museum(rs.getInt("id"), rs.getString("name"), rs.getString("street"), rs.getInt("openingHour"), rs.getInt("closingHour"),rs.getString("phone"),rs.getString("description"),rs.getDouble("price"),rs.getString("webpageUrl"),rs.getString("wiki"),rs.getString("googleMaps"));
+        Museum museum = new Museum(rs.getInt("id"), rs.getString("name"), rs.getString("street"), rs.getString("openingHour"), rs.getString("closingHour"),rs.getString("phone"),rs.getString("description"),rs.getDouble("price"),rs.getString("webpageUrl"),rs.getString("wiki"),rs.getString("googleMaps"));
         return museum;
     }
 
@@ -47,8 +47,8 @@ public class CRUDMuseumsBBDD implements DAOInterface {
             stmt.setInt(1, m.getId());
             stmt.setString(2, m.getName());
             stmt.setString(3, m.getStreet());
-            stmt.setInt(4, m.getOpeningHour());
-            stmt.setInt(5, m.getClosingHour());
+            stmt.setString(4, m.getOpeningHour());
+            stmt.setString(5, m.getClosingHour());
             stmt.setString(6, m.getPhone());
             stmt.setString(7, m.getDescription());
             stmt.setDouble(8, m.getPrice());
@@ -90,8 +90,8 @@ public class CRUDMuseumsBBDD implements DAOInterface {
             stmt.setInt(1, m.getId());
             stmt.setString(2, m.getName());
             stmt.setString(3, m.getStreet());
-            stmt.setInt(4, m.getOpeningHour());
-            stmt.setInt(5, m.getClosingHour());
+            stmt.setString(4, m.getOpeningHour());
+            stmt.setString(5, m.getClosingHour());
             stmt.setString(6, m.getPhone());
             stmt.setString(7, m.getDescription());
             stmt.setDouble(8, m.getPrice());
@@ -120,8 +120,8 @@ public class CRUDMuseumsBBDD implements DAOInterface {
             stmt.setInt(1, m.getId());
             stmt.setString(2, m.getName());
             stmt.setString(3, m.getStreet());
-            stmt.setInt(4, m.getOpeningHour());
-            stmt.setInt(5, m.getClosingHour());
+            stmt.setString(4, m.getOpeningHour());
+            stmt.setString(5, m.getClosingHour());
             stmt.setString(6, m.getPhone());
             stmt.setString(7, m.getDescription());
             stmt.setDouble(8, m.getPrice());
