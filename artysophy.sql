@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Creato il: Mar 24, 2023 alle 15:12
+-- Creato il: Mar 24, 2023 alle 15:24
 -- Versione del server: 10.4.27-MariaDB
 -- Versione PHP: 8.2.0
 
@@ -73,6 +73,20 @@ CREATE TABLE `Museum` (
   `googleMaps` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Struttura della tabella `User`
+--
+
+CREATE TABLE `User` (
+  `name` text NOT NULL,
+  `surname` text NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `email` text NOT NULL,
+  `password` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indici per le tabelle scaricate
 --
@@ -96,6 +110,13 @@ ALTER TABLE `Artwork`
 --
 ALTER TABLE `Museum`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indici per le tabelle `User`
+--
+ALTER TABLE `User`
+  ADD PRIMARY KEY (`username`),
+  ADD UNIQUE KEY `email` (`email`) USING HASH;
 
 --
 -- AUTO_INCREMENT per le tabelle scaricate
