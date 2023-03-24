@@ -4,14 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85958f89-e369-4deb-adff-30124249e314" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtworksBBDD.java" afterDir="false" />
+    <list default="true" id="85958f89-e369-4deb-adff-30124249e314" name="Changes" comment="Initial commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ArtElement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDCochesBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDMuseumsBBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDMotosBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtistsBBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtistsBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtistsBBDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtworksBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtworksBBDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDMuseumsBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDMuseumsBBDD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/ConsultasVehiculosBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/ConsultasVehiculosBBDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/DAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/DAOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Artist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Artwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Artwork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Museum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Museum.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +30,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Roberto Giordano &lt;robertogiordano@macbook-pro-di-roberto.local&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -163,6 +171,29 @@
       <option name="presentableId" value="Default" />
       <updated>1679562368380</updated>
     </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1679653232307</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679653232307</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
   </component>
 </project>

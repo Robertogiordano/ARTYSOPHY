@@ -1,12 +1,15 @@
 package bbdd;
 
-import dao.Moto;
-import dao.Vehiculo;
+
+import dao.ArtElement;
+import dao.Artist;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class CRUDArtistsBBDD implements DAOInterface {
@@ -27,21 +30,29 @@ public class CRUDArtistsBBDD implements DAOInterface {
         return instance;
     }
 
-    public Moto getMotoElement(ResultSet rs) throws SQLException {
-        Moto moto = new Moto(rs.getInt("bastidor"), rs.getString("matricula"), rs.getDouble("velocidad_max"), rs.getString("marca"), rs.getInt("cilindrada"), rs.getString("modelo"));
-        return moto;
+    public Artist getMotoElement(ResultSet rs) throws SQLException {
+        Artist artist = new Artist(rs.getInt("id"), rs.getString("name"), rs.getInt("birthYear"), rs.getInt("deathYear"), rs.getString("description"),rs.getString("wiki"));
+        return artist;
     }
 
     @Override
-    public void create(Vehiculo o) {
-        String query = "INSERT INTO Moto (bastidor, matricula, velocidad_max, marca, cilindrada, modelo) VALUES (?, ?, ?, ?,?,?)";
+    public void create(ArtElement o) {
+        Artist a;
+
+        if(o instanceof Artist){
+            a=(Artist) o;
+        }else{
+            throw new RuntimeException();
+        }
+
+        String query = "INSERT INTO Artist (id, name, birth_year, death_year, description, wiki) VALUES (?, ?, ?, ?,?,?)";
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
-            stmt.setLong(1, o.getBastidor());
-            stmt.setString(2, o.getMatricula());
-            stmt.setDouble(3, o.getVelocidadMaxima());
-            stmt.setString(4, o.getMarca());
-            stmt.setInt(5, ((Moto) o).getCilindrada());
-            stmt.setString(6, ((Moto) o).getModelo());
+            stmt.setInt(1, a.getId());
+            stmt.setString(2, a.getName());
+            stmt.setInt(3, a.getBirthYear());
+            stmt.setInt(4, a.getDeathYear());
+            stmt.setString(5, a.getDescription());
+            stmt.setString(6, a.getWiki());
 
             stmt.execute();
         } catch (Exception e) {
@@ -50,29 +61,36 @@ public class CRUDArtistsBBDD implements DAOInterface {
     }
 
     @Override
-    public List<Vehiculo> read(String condition) throws SQLException {
-        List<Vehiculo> vehiculos = new ArrayList<>();
-        String query = "SELECT * FROM Moto WHERE"+condition;
+    public List<ArtElement> read(String condition) throws SQLException {
+        List<ArtElement> artists = new ArrayList<>();
+        String query = "SELECT * FROM Artist WHERE"+condition;
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
-                vehiculos.add(getMotoElement(rs));
+                artists.add(getMotoElement(rs));
             }
         }
-        return vehiculos;
+        return artists;
     }
 
     @Override
-    public void update(Vehiculo o, String condition) {
-        String query = "UPDATE Moto SET bastidor=?, matricula=?, velocidad_max=?, marca=?, cilindrada=?, modelo=? WHERE ?";
+    public void update(ArtElement o, String condition) {
+        Artist a;
+
+        if(o instanceof Artist){
+            a=(Artist) o;
+        }else{
+            throw new RuntimeException();
+        }
+
+        String query = "UPDATE Moto SET id=?, name=?, birth_year=?, death_year=?, description=?, wiki=? WHERE "+condition;
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
-            stmt.setLong(1, o.getBastidor());
-            stmt.setString(2, o.getMatricula());
-            stmt.setDouble(3, o.getVelocidadMaxima());
-            stmt.setString(4, o.getMarca());
-            stmt.setInt(5, ((Moto)o).getCilindrada());
-            stmt.setString(6, ((Moto)o).getModelo());
-            stmt.setString(7,condition);
+            stmt.setInt(1, a.getId());
+            stmt.setString(2, a.getName());
+            stmt.setInt(3, a.getBirthYear());
+            stmt.setInt(4, a.getDeathYear());
+            stmt.setString(5, a.getDescription());
+            stmt.setString(6, a.getWiki());
 
             stmt.execute();
         } catch (Exception e) {
@@ -81,15 +99,23 @@ public class CRUDArtistsBBDD implements DAOInterface {
     }
 
     @Override
-    public void delete(Vehiculo o) {
-        String query = "DELETE FROM Moto WHERE bastidor=?, matricula=?, velocidad_max=?, marca=?, cilindrada=?, modelo=?";
+    public void delete(ArtElement o) {
+        Artist a;
+
+        if(o instanceof Artist){
+            a=(Artist) o;
+        }else{
+            throw new RuntimeException();
+        }
+
+        String query = "DELETE FROM Moto WHERE id=?, name=?, birth_year=?, death_year=?, description=?, wiki=?";
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
-            stmt.setLong(1, o.getBastidor());
-            stmt.setString(2, o.getMatricula());
-            stmt.setDouble(3, o.getVelocidadMaxima());
-            stmt.setString(4, o.getMarca());
-            stmt.setInt(5, ((Moto)o).getCilindrada());
-            stmt.setString(6, ((Moto)o).getModelo());
+            stmt.setInt(1, a.getId());
+            stmt.setString(2, a.getName());
+            stmt.setInt(3, a.getBirthYear());
+            stmt.setInt(4, a.getDeathYear());
+            stmt.setString(5, a.getDescription());
+            stmt.setString(6, a.getWiki());
 
             stmt.execute();
         } catch (Exception e) {

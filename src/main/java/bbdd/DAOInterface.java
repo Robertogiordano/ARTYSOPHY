@@ -1,13 +1,15 @@
 package bbdd;
 
-import dao.Vehiculo;
+import dao.ArtElement;
+import dao.Artist;
 
 import java.sql.SQLException;
+import java.util.Collection;
 import java.util.List;
 
 public interface DAOInterface {
-    public void create(Vehiculo o);
-    public List<Vehiculo> read(String condition) throws SQLException;
-    public void update(Vehiculo o1, String condition);
-    public void delete(Vehiculo o);
+    public void create(ArtElement o);
+    public List<ArtElement> read(String condition) throws SQLException;
+    public void update(ArtElement o, String condition);
+    public void delete(ArtElement o);
 }

@@ -1,14 +1,15 @@
 package bbdd;
 
+import dao.ArtElement;
+import dao.Artist;
 import dao.Artwork;
-import dao.Coche;
-import dao.Vehiculo;
-import dao.tipoArranque;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class CRUDArtworksBBDD implements DAOInterface {
@@ -29,20 +30,30 @@ public class CRUDArtworksBBDD implements DAOInterface {
         return instance;
     }
 
-    public Artwork getCocheElement(ResultSet rs) throws SQLException {
-        Artwork artwork = new Artwork(rs.getInt("bastidor"), rs.getString("matricula"), rs.getDouble("velocidad_max"), rs.getString("marca"), tipoArranque.valueOf(rs.getString("tipoArranque")));
+    public Artwork getArtworkElement(ResultSet rs) throws SQLException {
+        Artwork artwork = new Artwork(rs.getInt("id"), rs.getString("imgPath"), rs.getString("name"), rs.getInt("year"),rs.getInt("autor_id"), rs.getInt("museum_id"),rs.getString("description"),rs.getString("wiki"));
         return artwork;
     }
 
     @Override
-    public void create(Artwork o) {
-        String query = "INSERT INTO Artwork (bastidor, matricula, velocidad_max, marca, tipoArranque) VALUES (?, ?, ?, ?,?)";
+    public void create(ArtElement o) {
+        Artwork a;
+
+        if(o instanceof Artwork){
+            a=(Artwork) o;
+        }else{
+            throw new RuntimeException();
+        }
+        String query = "INSERT INTO Artwork (id, imgPath, name, year, autor_id, museum_id, description, wiki) VALUES (?, ?, ?, ?, ?,?,?,?)";
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
-            stmt.setLong(1, o.getBastidor());
-            stmt.setString(2, o.getMatricula());
-            stmt.setDouble(3, o.getVelocidadMaxima());
-            stmt.setString(4, o.getMarca());
-            stmt.setString(5, ((Coche)o).getArranque().toString());
+            stmt.setInt(1, a.getId());
+            stmt.setString(2, a.getImgPath());
+            stmt.setString(3, a.getName());
+            stmt.setInt(4, a.getYear());
+            stmt.setInt(5, a.getAutor_id());
+            stmt.setInt(6, a.getMuseum_id());
+            stmt.setString(7, a.getDescription());
+            stmt.setString(8, a.getWiki());
 
             stmt.execute();
         } catch (Exception e) {
@@ -51,28 +62,38 @@ public class CRUDArtworksBBDD implements DAOInterface {
     }
 
     @Override
-    public List<Artwork> read(String condition) throws SQLException {
-        List<Artwork> artworks = new ArrayList<>();
-        String query = "SELECT * FROM Coche WHERE "+condition;
+    public List<ArtElement> read(String condition) throws SQLException {
+        List<ArtElement> artworks = new ArrayList<>();
+        String query = "SELECT * FROM Artwork WHERE "+condition;
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
-                vehiculos.add(getCocheElement(rs));
+                artworks.add(getArtworkElement(rs));
             }
         }
-        return vehiculos;
+        return artworks;
     }
 
     @Override
-    public void update(Vehiculo o, String condition) {
-        String query = "UPDATE Coche SET bastidor=?, matricula=?, velocidad_max=?, marca=?, tipoArranque=? WHERE ?";
+    public void update(ArtElement o, String condition) {
+        Artwork a;
+
+        if(o instanceof Artwork){
+            a=(Artwork) o;
+        }else{
+            throw new RuntimeException();
+        }
+
+        String query = "UPDATE Artwork SET id=?, imgPath=?, name=?, year=?, autor_id=?, museum_id=?, description=?, wiki=? WHERE "+condition;
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
-            stmt.setLong(1, o.getBastidor());
-            stmt.setString(2, o.getMatricula());
-            stmt.setDouble(3, o.getVelocidadMaxima());
-            stmt.setString(4, o.getMarca());
-            stmt.setString(5, ((Coche)o).getArranque().toString());
-            stmt.setString(6,condition);
+            stmt.setInt(1, a.getId());
+            stmt.setString(2, a.getImgPath());
+            stmt.setString(3, a.getName());
+            stmt.setInt(4, a.getYear());
+            stmt.setInt(5, a.getAutor_id());
+            stmt.setInt(6, a.getMuseum_id());
+            stmt.setString(7, a.getDescription());
+            stmt.setString(8, a.getWiki());
 
             stmt.execute();
         } catch (Exception e) {
@@ -81,14 +102,25 @@ public class CRUDArtworksBBDD implements DAOInterface {
     }
 
     @Override
-    public void delete(Vehiculo o) {
-        String query = "DELETE FROM Moto WHERE bastidor=?, matricula=?, velocidad_max=?, marca=?, tipoArranque=?";
+    public void delete(ArtElement o) {
+        Artwork a;
+
+        if(o instanceof Artwork){
+            a=(Artwork) o;
+        }else{
+            throw new RuntimeException();
+        }
+
+        String query = "DELETE FROM Artwork WHERE id=?, imgPath=?, name=?, year=?, autor_id=?, museum_id=?, description=?, wiki=?";
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
-            stmt.setLong(1, o.getBastidor());
-            stmt.setString(2, o.getMatricula());
-            stmt.setDouble(3, o.getVelocidadMaxima());
-            stmt.setString(4, o.getMarca());
-            stmt.setString(5, ((Coche)o).getArranque().toString());
+            stmt.setInt(1, a.getId());
+            stmt.setString(2, a.getImgPath());
+            stmt.setString(3, a.getName());
+            stmt.setInt(4, a.getYear());
+            stmt.setInt(5, a.getAutor_id());
+            stmt.setInt(6, a.getMuseum_id());
+            stmt.setString(7, a.getDescription());
+            stmt.setString(8, a.getWiki());
 
             stmt.execute();
         } catch (Exception e) {

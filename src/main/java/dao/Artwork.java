@@ -1,23 +1,34 @@
 package dao;
 
-public class Artwork {
+import java.util.Objects;
+
+public class Artwork implements ArtElement{
+    private Integer id;
     private String imgPath;
     private String name;
     private Integer year;
-    private Artist autor;
-    private Museum museum;
+    private Integer autor_id;
+    private Integer museum_id;
     private String description;
-
     private String wiki;
 
-    public Artwork(String imgPath, String name, Integer year, Artist autor, Museum museum, String description, String wiki) {
+    public Artwork(Integer id, String imgPath, String name, Integer year, Integer autor_id, Integer museum_id, String description, String wiki) {
+        this.id = id;
         this.imgPath = imgPath;
         this.name = name;
         this.year = year;
-        this.autor = autor;
-        this.museum = museum;
+        this.autor_id = autor_id;
+        this.museum_id = museum_id;
         this.description = description;
         this.wiki = wiki;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getImgPath() {
@@ -44,20 +55,20 @@ public class Artwork {
         this.year = year;
     }
 
-    public Artist getAutor() {
-        return autor;
+    public Integer getAutor_id() {
+        return autor_id;
     }
 
-    public void setAutor(Artist autor) {
-        this.autor = autor;
+    public void setAutor_id(Integer autor_id) {
+        this.autor_id = autor_id;
     }
 
-    public Museum getMuseum() {
-        return museum;
+    public Integer getMuseum_id() {
+        return museum_id;
     }
 
-    public void setMuseum(Museum museum) {
-        this.museum = museum;
+    public void setMuseum_id(Integer museum_id) {
+        this.museum_id = museum_id;
     }
 
     public String getDescription() {
@@ -79,13 +90,27 @@ public class Artwork {
     @Override
     public String toString() {
         return "Artwork{" +
-                "imgPath='" + imgPath + '\'' +
+                "id=" + id +
+                ", imgPath='" + imgPath + '\'' +
                 ", name='" + name + '\'' +
                 ", year=" + year +
-                ", autor=" + autor +
-                ", museum=" + museum +
+                ", autor_id=" + autor_id +
+                ", museum_id=" + museum_id +
                 ", description='" + description + '\'' +
                 ", wiki='" + wiki + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Artwork)) return false;
+        Artwork artwork = (Artwork) o;
+        return Objects.equals(id, artwork.id) && Objects.equals(imgPath, artwork.imgPath) && Objects.equals(name, artwork.name) && Objects.equals(year, artwork.year) && Objects.equals(autor_id, artwork.autor_id) && Objects.equals(museum_id, artwork.museum_id) && Objects.equals(description, artwork.description) && Objects.equals(wiki, artwork.wiki);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, imgPath, name, year, autor_id, museum_id, description, wiki);
     }
 }

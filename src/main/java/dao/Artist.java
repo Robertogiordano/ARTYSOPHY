@@ -1,6 +1,9 @@
 package dao;
 
-public class Artist {
+import java.util.Objects;
+
+public class Artist implements ArtElement{
+    private Integer id;
     private String name;
     private Integer birthYear;
     private Integer deathYear;
@@ -8,12 +11,21 @@ public class Artist {
 
     private String wiki;
 
-    public Artist(String name, Integer birthYear, Integer deathYear, String description, String wiki) {
+    public Artist(Integer id, String name, Integer birthYear, Integer deathYear, String description, String wiki) {
+        this.id = id;
         this.name = name;
         this.birthYear = birthYear;
         this.deathYear = deathYear;
         this.description = description;
         this.wiki = wiki;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public Artist(String name, Integer birthYear, String description, String wiki) {
@@ -72,4 +84,18 @@ public class Artist {
                 ", description='" + description + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Artist)) return false;
+        Artist artist = (Artist) o;
+        return Objects.equals(id, artist.id) && Objects.equals(name, artist.name) && Objects.equals(birthYear, artist.birthYear) && Objects.equals(deathYear, artist.deathYear) && Objects.equals(description, artist.description) && Objects.equals(wiki, artist.wiki);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, birthYear, deathYear, description, wiki);
+    }
+
 }

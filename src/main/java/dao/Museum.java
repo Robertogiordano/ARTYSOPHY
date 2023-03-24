@@ -1,32 +1,41 @@
 package dao;
 
-public class Museum {
+import java.util.Objects;
+
+public class Museum implements ArtElement{
+    private Integer id;
     private String name;
     private String street;
     private Integer openingHour;
     private Integer closingHour;
-    private String email;
     private String phone;
     private String description;
     private Double price;
     private String webpageUrl;
-
     private String wiki;
     private String googleMaps;
 
 
-    public Museum(String name, String street, Integer openingHour, Integer closingHour, String email, String phone, String description, Double price, String webpageUrl, String wiki, String googleMaps) {
+    public Museum(Integer id, String name, String street, Integer openingHour, Integer closingHour, String phone, String description, Double price, String webpageUrl, String wiki, String googleMaps) {
+        this.id = id;
         this.name = name;
         this.street = street;
         this.openingHour = openingHour;
         this.closingHour = closingHour;
-        this.email = email;
         this.phone = phone;
         this.description = description;
         this.price = price;
         this.webpageUrl = webpageUrl;
         this.wiki = wiki;
         this.googleMaps = googleMaps;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -59,14 +68,6 @@ public class Museum {
 
     public void setClosingHour(Integer closingHour) {
         this.closingHour = closingHour;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPhone() {
@@ -124,7 +125,6 @@ public class Museum {
                 ", street='" + street + '\'' +
                 ", openingHour=" + openingHour +
                 ", closingHour=" + closingHour +
-                ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
@@ -132,5 +132,18 @@ public class Museum {
                 ", wiki='" + wiki + '\'' +
                 ", googleMaps='" + googleMaps + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Museum)) return false;
+        Museum museum = (Museum) o;
+        return Objects.equals(id, museum.id) && Objects.equals(name, museum.name) && Objects.equals(street, museum.street) && Objects.equals(openingHour, museum.openingHour) && Objects.equals(closingHour, museum.closingHour) && Objects.equals(phone, museum.phone) && Objects.equals(description, museum.description) && Objects.equals(price, museum.price) && Objects.equals(webpageUrl, museum.webpageUrl) && Objects.equals(wiki, museum.wiki) && Objects.equals(googleMaps, museum.googleMaps);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, street, openingHour, closingHour, phone, description, price, webpageUrl, wiki, googleMaps);
     }
 }

@@ -1,14 +1,13 @@
 package bbdd;
 
-import dao.Coche;
-import dao.Vehiculo;
-import dao.tipoArranque;
+import dao.ArtElement;
+import dao.Artist;
+import dao.Museum;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CRUDMuseumsBBDD implements DAOInterface {
     private ConnectionManager connManager;
@@ -28,20 +27,34 @@ public class CRUDMuseumsBBDD implements DAOInterface {
         return instance;
     }
 
-    public Coche getCocheElement(ResultSet rs) throws SQLException {
-        Coche coche = new Coche(rs.getInt("bastidor"), rs.getString("matricula"), rs.getDouble("velocidad_max"), rs.getString("marca"), tipoArranque.valueOf(rs.getString("tipoArranque")));
-        return coche;
+    public Museum getMuseumElement(ResultSet rs) throws SQLException {
+        Museum museum = new Museum(rs.getInt("id"), rs.getString("name"), rs.getString("street"), rs.getInt("openingHour"), rs.getInt("closingHour"),rs.getString("phone"),rs.getString("description"),rs.getDouble("price"),rs.getString("webpageUrl"),rs.getString("wiki"),rs.getString("googleMaps"));
+        return museum;
     }
 
     @Override
-    public void create(Vehiculo o) {
-        String query = "INSERT INTO Coche (bastidor, matricula, velocidad_max, marca, tipoArranque) VALUES (?, ?, ?, ?,?)";
+    public void create(ArtElement o) {
+        Museum m;
+
+        if(o instanceof Museum){
+            m=(Museum)o;
+        }else{
+            throw new RuntimeException();
+        }
+
+        String query = "INSERT INTO Museum (id, name, street, openingHour, closingHour, phone, description, price, webpageUrl,wiki,googleMaps) VALUES (?, ?, ?, ?,?,?, ?, ?, ?,?,?)";
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
-            stmt.setLong(1, o.getBastidor());
-            stmt.setString(2, o.getMatricula());
-            stmt.setDouble(3, o.getVelocidadMaxima());
-            stmt.setString(4, o.getMarca());
-            stmt.setString(5, ((Coche)o).getArranque().toString());
+            stmt.setInt(1, m.getId());
+            stmt.setString(2, m.getName());
+            stmt.setString(3, m.getStreet());
+            stmt.setInt(4, m.getOpeningHour());
+            stmt.setInt(5, m.getClosingHour());
+            stmt.setString(6, m.getPhone());
+            stmt.setString(7, m.getDescription());
+            stmt.setDouble(8, m.getPrice());
+            stmt.setString(9, m.getWebpageUrl());
+            stmt.setString(10, m.getWiki());
+            stmt.setString(11, m.getGoogleMaps());
 
             stmt.execute();
         } catch (Exception e) {
@@ -50,28 +63,41 @@ public class CRUDMuseumsBBDD implements DAOInterface {
     }
 
     @Override
-    public List<Vehiculo> read(String condition) throws SQLException {
-        List<Vehiculo> vehiculos = new ArrayList<>();
-        String query = "SELECT * FROM Coche WHERE "+condition;
+    public List<ArtElement> read(String condition) throws SQLException {
+        List<ArtElement> museums = new ArrayList<>();
+        String query = "SELECT * FROM Museum WHERE "+condition;
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
-                vehiculos.add(getCocheElement(rs));
+                museums.add(getMuseumElement(rs));
             }
         }
-        return vehiculos;
+        return museums;
     }
 
     @Override
-    public void update(Vehiculo o, String condition) {
-        String query = "UPDATE Coche SET bastidor=?, matricula=?, velocidad_max=?, marca=?, tipoArranque=? WHERE ?";
+    public void update(ArtElement o, String condition) {
+        Museum m;
+
+        if(o instanceof Museum){
+            m=(Museum)o;
+        }else{
+            throw new RuntimeException();
+        }
+
+        String query = "UPDATE Museum SET id=?, name=?, street=?, openingHour=?, closingHour=?, phone=?, description=?, price=?, webpageUrl=?,wiki=?,googleMaps=? WHERE "+condition;
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
-            stmt.setLong(1, o.getBastidor());
-            stmt.setString(2, o.getMatricula());
-            stmt.setDouble(3, o.getVelocidadMaxima());
-            stmt.setString(4, o.getMarca());
-            stmt.setString(5, ((Coche)o).getArranque().toString());
-            stmt.setString(6,condition);
+            stmt.setInt(1, m.getId());
+            stmt.setString(2, m.getName());
+            stmt.setString(3, m.getStreet());
+            stmt.setInt(4, m.getOpeningHour());
+            stmt.setInt(5, m.getClosingHour());
+            stmt.setString(6, m.getPhone());
+            stmt.setString(7, m.getDescription());
+            stmt.setDouble(8, m.getPrice());
+            stmt.setString(9, m.getWebpageUrl());
+            stmt.setString(10, m.getWiki());
+            stmt.setString(11, m.getGoogleMaps());
 
             stmt.execute();
         } catch (Exception e) {
@@ -80,14 +106,28 @@ public class CRUDMuseumsBBDD implements DAOInterface {
     }
 
     @Override
-    public void delete(Vehiculo o) {
-        String query = "DELETE FROM Moto WHERE bastidor=?, matricula=?, velocidad_max=?, marca=?, tipoArranque=?";
+    public void delete(ArtElement o) {
+        Museum m;
+
+        if(o instanceof Museum){
+            m=(Museum)o;
+        }else{
+            throw new RuntimeException();
+        }
+
+        String query = "DELETE FROM Museum WHERE id=?, name=?, street=?, openingHour=?, closingHour=?, phone=?, description=?, price=?, webpageUrl=?,wiki=?,googleMaps=?";
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
-            stmt.setLong(1, o.getBastidor());
-            stmt.setString(2, o.getMatricula());
-            stmt.setDouble(3, o.getVelocidadMaxima());
-            stmt.setString(4, o.getMarca());
-            stmt.setString(5, ((Coche)o).getArranque().toString());
+            stmt.setInt(1, m.getId());
+            stmt.setString(2, m.getName());
+            stmt.setString(3, m.getStreet());
+            stmt.setInt(4, m.getOpeningHour());
+            stmt.setInt(5, m.getClosingHour());
+            stmt.setString(6, m.getPhone());
+            stmt.setString(7, m.getDescription());
+            stmt.setDouble(8, m.getPrice());
+            stmt.setString(9, m.getWebpageUrl());
+            stmt.setString(10, m.getWiki());
+            stmt.setString(11, m.getGoogleMaps());
 
             stmt.execute();
         } catch (Exception e) {
