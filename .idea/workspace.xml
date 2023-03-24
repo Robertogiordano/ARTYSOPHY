@@ -5,20 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85958f89-e369-4deb-adff-30124249e314" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/test/java/manager/TestCommandInvoker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDUserBBDD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GestionVehiculos.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDMuseumsBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDMuseumsBBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ArtElement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ArtElement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Artwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Artwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Museum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Museum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dao/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/bbdd/TestConnectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bbdd/TestConnectionDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/dao/TestDAOs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/TestDAOs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/manager/TestConsultaVehiculos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/TestConsultaVehiculos.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +72,7 @@
   </component>
   <component name="RunManager" selected="JUnit.TestDAOs.compareArtworkTest">
     <configuration name="TestDAOs.compareArtworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GestionVehiculos" />
+      <module name="Artysophy" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="dao.*" />
@@ -96,7 +88,7 @@
       </method>
     </configuration>
     <configuration name="TestDAOs.compareMuseumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GestionVehiculos" />
+      <module name="Artysophy" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="dao.*" />
@@ -112,7 +104,7 @@
       </method>
     </configuration>
     <configuration name="TestDAOs.equalsArtworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GestionVehiculos" />
+      <module name="Artysophy" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="dao.*" />
@@ -128,7 +120,7 @@
       </method>
     </configuration>
     <configuration name="TestDAOs.equalsMuseumTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GestionVehiculos" />
+      <module name="Artysophy" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="dao.*" />
@@ -144,7 +136,7 @@
       </method>
     </configuration>
     <configuration name="TestDAOs.printArtworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GestionVehiculos" />
+      <module name="Artysophy" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="dao.*" />
@@ -199,7 +191,28 @@
       <option name="project" value="LOCAL" />
       <updated>1679664201342</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Initial commit">
+      <created>1679667356862</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1679667356862</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Initial commit">
+      <created>1679667505852</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1679667505852</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Initial commit">
+      <created>1679667860213</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1679667860213</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

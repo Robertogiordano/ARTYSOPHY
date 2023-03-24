@@ -1,5 +1,6 @@
 package dao;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class User {
@@ -9,32 +10,11 @@ public class User {
     private String email;
     private String password;
 
-    public User(){
-        System.out.print("Name: ");
-        name=new Scanner(System.in).nextLine();
-
-        System.out.print("Surnames: ");
-        surnames=new Scanner(System.in).nextLine();
-
-        System.out.print("Username: ");
-        username=new Scanner(System.in).nextLine();
-
-        System.out.print("email: ");
-        email=new Scanner(System.in).nextLine();
-
-        System.out.print("password: ");
-        password=new Scanner(System.in).nextLine();
-    }
     public User(String name, String surnames, String username, String email, String password) {
         this.name = name;
         this.surnames = surnames;
         this.username = username;
         this.email = email;
-        this.password = password;
-    }
-
-    public User(String username, String password) {
-        this.username = username;
         this.password = password;
     }
 
@@ -95,5 +75,8 @@ public class User {
                 ", email='" + email + '\'' +
                 '}';
     }
-
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surnames, username, email, password);
+    }
 }
