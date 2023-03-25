@@ -16,17 +16,17 @@ public class ConsultasBBDD {
         switch (category){
             case "artists":
                 CRUDArtistsBBDD artistsBBDD= CRUDArtistsBBDD.getInstance();
-                artElements.addAll(artistsBBDD.read("*"));
+                artElements.addAll(artistsBBDD.read("1"));
                 artistsBBDD.closeConnection();
                 break;
             case "museums":
                 CRUDMuseumsBBDD museumsBBDD= CRUDMuseumsBBDD.getInstance();
-                artElements.addAll(museumsBBDD.read("*"));
+                artElements.addAll(museumsBBDD.read("1"));
                 museumsBBDD.closeConnection();
                 break;
             case "artworks":
                 CRUDArtworksBBDD artworksBBDD= CRUDArtworksBBDD.getInstance();
-                artElements.addAll(artworksBBDD.read("*"));
+                artElements.addAll(artworksBBDD.read("1"));
                 artworksBBDD.closeConnection();
                 break;
         }
@@ -80,6 +80,16 @@ public class ConsultasBBDD {
         }
 
         return artElements;
+    }
+
+    public static List<User> getUsers() throws SQLException {
+        List<User> users=new ArrayList<>();
+
+        CRUDUserBBDD userBBDD= CRUDUserBBDD.getInstance();
+        users.addAll(userBBDD.readAll());
+        userBBDD.closeConnection();
+
+        return users;
     }
 
     public static User checkLogin(User user){

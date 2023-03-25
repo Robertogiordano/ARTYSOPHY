@@ -13,15 +13,13 @@ import java.util.Collections;
 import java.util.List;
 
 class CRUDArtistsBBDD implements DAOInterface {
-    private ConnectionManager connManager;
     private static CRUDArtistsBBDD instance;
 
     private CRUDArtistsBBDD(){
-        connManager.getConnection();
+        ConnectionManager.getConnection();
     }
-
     public void closeConnection(){
-        connManager.closeConnection();
+        ConnectionManager.closeConnection();
     }
     public static CRUDArtistsBBDD getInstance() {
         if(instance==null){
@@ -45,8 +43,8 @@ class CRUDArtistsBBDD implements DAOInterface {
             throw new RuntimeException();
         }
 
-        String query = "INSERT INTO Artist (id, name, birth_year, death_year, description, wiki) VALUES (?, ?, ?, ?,?,?)";
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        String query = "INSERT INTO Artist (id, name, birthYear, deathYear, description, wiki) VALUES (?, ?, ?, ?,?,?)";
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setInt(1, a.getId());
             stmt.setString(2, a.getName());
             stmt.setInt(3, a.getBirthYear());
@@ -64,7 +62,7 @@ class CRUDArtistsBBDD implements DAOInterface {
     public List<ArtElement> read(String condition) throws SQLException {
         List<ArtElement> artists = new ArrayList<>();
         String query = "SELECT * FROM Artist WHERE"+condition;
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query);
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
                 artists.add(getMotoElement(rs));
@@ -83,8 +81,8 @@ class CRUDArtistsBBDD implements DAOInterface {
             throw new RuntimeException();
         }
 
-        String query = "UPDATE Moto SET id=?, name=?, birth_year=?, death_year=?, description=?, wiki=? WHERE "+condition;
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        String query = "UPDATE Artist SET id=?, name=?, birthYear=?, deathYear=?, description=?, wiki=? WHERE "+condition;
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setInt(1, a.getId());
             stmt.setString(2, a.getName());
             stmt.setInt(3, a.getBirthYear());
@@ -108,8 +106,8 @@ class CRUDArtistsBBDD implements DAOInterface {
             throw new RuntimeException();
         }
 
-        String query = "DELETE FROM Moto WHERE id=?, name=?, birth_year=?, death_year=?, description=?, wiki=?";
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        String query = "DELETE FROM Artist WHERE id=?, name=?, birthYear=?, deathYear=?, description=?, wiki=?";
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setInt(1, a.getId());
             stmt.setString(2, a.getName());
             stmt.setInt(3, a.getBirthYear());

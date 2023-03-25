@@ -6,18 +6,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 class CRUDUserBBDD {
-    private ConnectionManager connManager;
     private static CRUDUserBBDD instance;
 
     private CRUDUserBBDD(){
-        connManager.getConnection();
+        ConnectionManager.getConnection();
     }
 
     public void closeConnection(){
-        connManager.closeConnection();
+        ConnectionManager.closeConnection();
     }
     public static CRUDUserBBDD getInstance() {
         if(instance==null){
@@ -33,8 +33,8 @@ class CRUDUserBBDD {
 
 
     public void create(User u) {
-        String query = "INSERT INTO User (name,surnames,username,email,password) VALUES (?, ?, ?, ?,?,?, ?, ?, ?,?,?)";
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        String query = "INSERT INTO User (name,surnames,username,email,password) VALUES (?, ?, ?, ?,?)";
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurnames());
             stmt.setString(3, u.getUsername());
@@ -49,8 +49,8 @@ class CRUDUserBBDD {
 
 
     public User read(String username, String password) throws SQLException {
-        String query = "SELECT * FROM User WHERE username"+username+"and password="+password;
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query);
+        String query = "SELECT * FROM User WHERE username='"+username+"' and password='"+password+"'";
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             if (rs.next()) {
                 return getUserElement(rs);
@@ -59,11 +59,9 @@ class CRUDUserBBDD {
             }
         }
     }
-
-
     public void update(User u, String condition) {
         String query = "UPDATE User SET name=?, surnames=?, username=?, email=?, password=? WHERE "+condition;
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurnames());
             stmt.setString(3, u.getUsername());
@@ -79,7 +77,7 @@ class CRUDUserBBDD {
     public void delete(User u) {
 
         String query = "DELETE FROM User WHERE name=?, surnames=?, username=?, email=?, password=?";
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurnames());
             stmt.setString(3, u.getUsername());
@@ -90,5 +88,19 @@ class CRUDUserBBDD {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public List<User> readAll() {
+        List<User> users=new ArrayList<>();
+        String query = "SELECT * FROM User WHERE 1";
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query);
+             ResultSet rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                users.add(getUserElement(rs));
+            }
+        }catch (Exception e){
+            throw new RuntimeException("Error read all users");
+        }
+        return users;
     }
 }

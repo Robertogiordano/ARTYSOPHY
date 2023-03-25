@@ -18,9 +18,11 @@ public class UserLoginCommand implements Command {
     public List<Object> execute() {
         if(ConsultasBBDD.checkLogin(user)!=null){
             CommandInvoker.setUser(user);
+            System.out.println("User trovato");
             return Collections.singletonList(user);
         }
 
+        System.out.println("User NON trovato");
         return null;
     }
 }

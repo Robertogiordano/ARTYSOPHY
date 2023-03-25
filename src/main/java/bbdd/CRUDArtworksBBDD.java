@@ -13,15 +13,14 @@ import java.util.Collections;
 import java.util.List;
 
 class CRUDArtworksBBDD implements DAOInterface {
-    private ConnectionManager connManager;
     private static CRUDArtworksBBDD instance;
 
     private CRUDArtworksBBDD(){
-        connManager.getConnection();
+        ConnectionManager.getConnection();
     }
 
     public void closeConnection(){
-        connManager.closeConnection();
+        ConnectionManager.closeConnection();
     }
     public static CRUDArtworksBBDD getInstance() {
         if(instance==null){
@@ -45,7 +44,7 @@ class CRUDArtworksBBDD implements DAOInterface {
             throw new RuntimeException();
         }
         String query = "INSERT INTO Artwork (id, imgPath, name, year, autor_id, museum_id, description, wiki) VALUES (?, ?, ?, ?, ?,?,?,?)";
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setInt(1, a.getId());
             stmt.setString(2, a.getImgPath());
             stmt.setString(3, a.getName());
@@ -65,7 +64,7 @@ class CRUDArtworksBBDD implements DAOInterface {
     public List<ArtElement> read(String condition) throws SQLException {
         List<ArtElement> artworks = new ArrayList<>();
         String query = "SELECT * FROM Artwork WHERE "+condition;
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query);
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
                 artworks.add(getArtworkElement(rs));
@@ -85,7 +84,7 @@ class CRUDArtworksBBDD implements DAOInterface {
         }
 
         String query = "UPDATE Artwork SET id=?, imgPath=?, name=?, year=?, autor_id=?, museum_id=?, description=?, wiki=? WHERE "+condition;
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setInt(1, a.getId());
             stmt.setString(2, a.getImgPath());
             stmt.setString(3, a.getName());
@@ -112,7 +111,7 @@ class CRUDArtworksBBDD implements DAOInterface {
         }
 
         String query = "DELETE FROM Artwork WHERE id=?, imgPath=?, name=?, year=?, autor_id=?, museum_id=?, description=?, wiki=?";
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setInt(1, a.getId());
             stmt.setString(2, a.getImgPath());
             stmt.setString(3, a.getName());

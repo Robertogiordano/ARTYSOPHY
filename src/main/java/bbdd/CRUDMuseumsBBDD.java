@@ -10,15 +10,14 @@ import java.sql.SQLException;
 import java.util.*;
 
 class CRUDMuseumsBBDD implements DAOInterface {
-    private ConnectionManager connManager;
     private static CRUDMuseumsBBDD instance;
 
     private CRUDMuseumsBBDD(){
-        connManager.getConnection();
+        ConnectionManager.getConnection();
     }
 
     public void closeConnection(){
-        connManager.closeConnection();
+        ConnectionManager.closeConnection();
     }
     public static CRUDMuseumsBBDD getInstance() {
         if(instance==null){
@@ -43,7 +42,7 @@ class CRUDMuseumsBBDD implements DAOInterface {
         }
 
         String query = "INSERT INTO Museum (id, name, street, openingHour, closingHour, phone, description, price, webpageUrl,wiki,googleMaps) VALUES (?, ?, ?, ?,?,?, ?, ?, ?,?,?)";
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setInt(1, m.getId());
             stmt.setString(2, m.getName());
             stmt.setString(3, m.getStreet());
@@ -66,7 +65,7 @@ class CRUDMuseumsBBDD implements DAOInterface {
     public List<ArtElement> read(String condition) throws SQLException {
         List<ArtElement> museums = new ArrayList<>();
         String query = "SELECT * FROM Museum WHERE "+condition;
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query);
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
                 museums.add(getMuseumElement(rs));
@@ -86,7 +85,7 @@ class CRUDMuseumsBBDD implements DAOInterface {
         }
 
         String query = "UPDATE Museum SET id=?, name=?, street=?, openingHour=?, closingHour=?, phone=?, description=?, price=?, webpageUrl=?,wiki=?,googleMaps=? WHERE "+condition;
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setInt(1, m.getId());
             stmt.setString(2, m.getName());
             stmt.setString(3, m.getStreet());
@@ -116,7 +115,7 @@ class CRUDMuseumsBBDD implements DAOInterface {
         }
 
         String query = "DELETE FROM Museum WHERE id=?, name=?, street=?, openingHour=?, closingHour=?, phone=?, description=?, price=?, webpageUrl=?,wiki=?,googleMaps=?";
-        try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
+        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
             stmt.setInt(1, m.getId());
             stmt.setString(2, m.getName());
             stmt.setString(3, m.getStreet());
