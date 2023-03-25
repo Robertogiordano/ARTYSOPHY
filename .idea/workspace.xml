@@ -91,7 +91,7 @@
       <recent name="manager" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CRUDArtworkBBDDTest.deleteArtworkTest">
+  <component name="RunManager" selected="JUnit.CRUDArtworkBBDDTest.createArtworkTest">
     <configuration name="CRUDArtworkBBDDTest.createArtworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Artysophy" />
       <extension name="coverage">
@@ -174,11 +174,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CRUDArtworkBBDDTest.createArtworkTest" />
         <item itemvalue="JUnit.CRUDArtworkBBDDTest.deleteArtworkTest" />
         <item itemvalue="JUnit.CRUDArtworkBBDDTest.readAllArtworkTest" />
         <item itemvalue="JUnit.CRUDArtworkBBDDTest.updateArtworkTest" />
         <item itemvalue="JUnit.CRUDArtworkBBDDTest.readArtworkTest" />
-        <item itemvalue="JUnit.CRUDArtworkBBDDTest.createArtworkTest" />
       </list>
     </recent_temporary>
   </component>
