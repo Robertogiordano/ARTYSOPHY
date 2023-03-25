@@ -25,7 +25,7 @@ public class TestDAOs {
 
     @Test
     public void equalsArtistTest(){
-        Artist testArtist1=new Artist(1,"Pablo Picasso",18811025,1973048,"Pablo Ruiz y Picasso, simply known as Pablo Picasso, was a Spanish painter, sculptor and lithographer, among the most influential of the 20th century","https://en.wikipedia.org/wiki/Pablo_Picasso");
+        Artist testArtist1=new Artist(2,"Pablo Picasso",18811025,1973048,"Pablo Ruiz y Picasso, simply known as Pablo Picasso, was a Spanish painter, sculptor and lithographer, among the most influential of the 20th century","https://en.wikipedia.org/wiki/Pablo_Picasso");
         Assert.assertEquals(artist,testArtist1);
 
         Artist testArtist2=new Artist(1,"Pablito Picasso",18811025,1973048,"Pablo Ruiz y Picasso, simply known as Pablo Picasso, was a Spanish painter, sculptor and lithographer, among the most influential of the 20th century","https://en.wikipedia.org/wiki/Pablo_Picasso");

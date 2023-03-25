@@ -12,12 +12,15 @@ import java.util.List;
 class CRUDUserBBDD {
     private static CRUDUserBBDD instance;
 
+    private static ConnectionManager connection;
+
     private CRUDUserBBDD(){
-        ConnectionManager.getConnection();
+        connection=new ConnectionManager();
+        connection.getConnection();
     }
 
     public void closeConnection(){
-        ConnectionManager.closeConnection();
+        connection.closeConnection();
     }
     public static CRUDUserBBDD getInstance() {
         if(instance==null){
@@ -26,7 +29,7 @@ class CRUDUserBBDD {
         return instance;
     }
 
-    public User getUserElement(ResultSet rs) throws SQLException {
+    private User getUserElement(ResultSet rs) throws SQLException {
         User user = new User(rs.getString("name"), rs.getString("surnames"), rs.getString("username"), rs.getString("email"),rs.getString("password"));
         return user;
     }
@@ -34,7 +37,7 @@ class CRUDUserBBDD {
 
     public void create(User u) {
         String query = "INSERT INTO User (name,surnames,username,email,password) VALUES (?, ?, ?, ?,?)";
-        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
+        try (PreparedStatement stmt = connection.conn.prepareStatement(query)) {
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurnames());
             stmt.setString(3, u.getUsername());
@@ -46,11 +49,9 @@ class CRUDUserBBDD {
             e.printStackTrace();
         }
     }
-
-
     public User read(String username, String password) throws SQLException {
         String query = "SELECT * FROM User WHERE username='"+username+"' and password='"+password+"'";
-        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query);
+        try (PreparedStatement stmt = connection.conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             if (rs.next()) {
                 return getUserElement(rs);
@@ -61,7 +62,7 @@ class CRUDUserBBDD {
     }
     public void update(User u, String condition) {
         String query = "UPDATE User SET name=?, surnames=?, username=?, email=?, password=? WHERE "+condition;
-        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
+        try (PreparedStatement stmt = connection.conn.prepareStatement(query)) {
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurnames());
             stmt.setString(3, u.getUsername());
@@ -73,11 +74,10 @@ class CRUDUserBBDD {
             e.printStackTrace();
         }
     }
-
     public void delete(User u) {
 
-        String query = "DELETE FROM User WHERE name=?, surnames=?, username=?, email=?, password=?";
-        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query)) {
+        String query = "DELETE FROM User WHERE name=? and surnames=? and username=? and email=? and password=?";
+        try (PreparedStatement stmt = connection.conn.prepareStatement(query)) {
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurnames());
             stmt.setString(3, u.getUsername());
@@ -93,7 +93,7 @@ class CRUDUserBBDD {
     public List<User> readAll() {
         List<User> users=new ArrayList<>();
         String query = "SELECT * FROM User WHERE 1";
-        try (PreparedStatement stmt = ConnectionManager.conn.prepareStatement(query);
+        try (PreparedStatement stmt = connection.conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             while (rs.next()) {
                 users.add(getUserElement(rs));

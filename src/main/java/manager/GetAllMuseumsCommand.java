@@ -1,5 +1,6 @@
 package manager;
 
+import bbdd.ArtElementType;
 import bbdd.ConsultasBBDD;
 import manager.Command;
 import manager.CommandInvoker;
@@ -12,7 +13,7 @@ public class GetAllMuseumsCommand implements Command {
     @Override
     public List<Object> execute() {
         try {
-            return Collections.singletonList(ConsultasBBDD.getArtElements("museums"));
+            return Collections.singletonList(ConsultasBBDD.getArtElements(ArtElementType.MUSEUMS));
         } catch (SQLException e) {
             throw new RuntimeException("Impossible get all museums");
         }

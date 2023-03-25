@@ -1,5 +1,6 @@
 package manager;
 
+import bbdd.ArtElementType;
 import bbdd.ConsultasBBDD;
 import manager.Command;
 import manager.CommandInvoker;
@@ -21,7 +22,7 @@ class SeeArtistCommand implements Command {
     @Override
     public List<Object> execute() {
         try {
-            return Collections.singletonList(ConsultasBBDD.filterArtElementId("artists",n.toString()));
+            return Collections.singletonList(ConsultasBBDD.filterArtElementId(ArtElementType.ARTISTS,n.toString()));
         } catch (SQLException e) {
             throw new RuntimeException("Impossible get artist by id");
         }

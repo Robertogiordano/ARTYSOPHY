@@ -92,18 +92,18 @@ public class Artist implements ArtElement{
         if (this == o) return true;
         if (!(o instanceof Artist)) return false;
         Artist artist = (Artist) o;
-        return Objects.equals(id, artist.id) && Objects.equals(name, artist.name) && Objects.equals(birthYear, artist.birthYear) && Objects.equals(deathYear, artist.deathYear) && Objects.equals(description, artist.description) && Objects.equals(wiki, artist.wiki);
+        return Objects.equals(name, artist.name) && Objects.equals(birthYear, artist.birthYear) && Objects.equals(deathYear, artist.deathYear) && Objects.equals(description, artist.description) && Objects.equals(wiki, artist.wiki);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, birthYear, deathYear, description, wiki);
+        return Objects.hash(name, birthYear, deathYear, description, wiki);
     }
 
     public int compareTo(ArtElement o) {
         if (this == o) return 0;
         if (!(o instanceof Artist)) throw new RuntimeException();
         Artist artist = (Artist) o;
-        return getId().compareTo(artist.getId());
+        return getName().compareTo(artist.getName());
     }
 }

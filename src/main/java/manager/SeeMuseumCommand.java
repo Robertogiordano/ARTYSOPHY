@@ -1,5 +1,6 @@
 package manager;
 
+import bbdd.ArtElementType;
 import bbdd.ConsultasBBDD;
 import manager.Command;
 import manager.CommandInvoker;
@@ -22,7 +23,7 @@ class SeeMuseumCommand implements Command {
         @Override
         public List<Object> execute() {
             try {
-                return Collections.singletonList(ConsultasBBDD.filterArtElementId("museums",n.toString()));
+                return Collections.singletonList(ConsultasBBDD.filterArtElementId(ArtElementType.MUSEUMS,n.toString()));
             } catch (SQLException e) {
                 throw new RuntimeException("Impossible get museum by id");
             }

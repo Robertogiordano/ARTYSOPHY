@@ -106,12 +106,12 @@ public class Artwork implements ArtElement{
         if (this == o) return true;
         if (!(o instanceof Artwork)) return false;
         Artwork artwork = (Artwork) o;
-        return Objects.equals(id, artwork.id) && Objects.equals(imgPath, artwork.imgPath) && Objects.equals(name, artwork.name) && Objects.equals(year, artwork.year) && Objects.equals(autor_id, artwork.autor_id) && Objects.equals(museum_id, artwork.museum_id) && Objects.equals(description, artwork.description) && Objects.equals(wiki, artwork.wiki);
+        return Objects.equals(imgPath, artwork.imgPath) && Objects.equals(name, artwork.name) && Objects.equals(year, artwork.year) && Objects.equals(autor_id, artwork.autor_id) && Objects.equals(museum_id, artwork.museum_id) && Objects.equals(description, artwork.description) && Objects.equals(wiki, artwork.wiki);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, imgPath, name, year, autor_id, museum_id, description, wiki);
+        return Objects.hash(imgPath, name, year, autor_id, museum_id, description, wiki);
     }
 
     @Override
@@ -119,6 +119,6 @@ public class Artwork implements ArtElement{
         if (this == o) return 0;
         if (!(o instanceof Artwork)) throw new RuntimeException();
         Artwork artwork = (Artwork) o;
-        return getId().compareTo(artwork.getId());
+        return getName().compareTo(artwork.getName());
     }
 }

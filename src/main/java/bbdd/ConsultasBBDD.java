@@ -10,21 +10,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ConsultasBBDD {
-    public static List<ArtElement> getArtElements(String category) throws SQLException {
+
+    public static List<ArtElement> getArtElements(ArtElementType category) throws SQLException {
         List<ArtElement> artElements=new ArrayList<>();
 
         switch (category){
-            case "artists":
+            case ARTISTS:
                 CRUDArtistsBBDD artistsBBDD= CRUDArtistsBBDD.getInstance();
                 artElements.addAll(artistsBBDD.read("1"));
                 artistsBBDD.closeConnection();
                 break;
-            case "museums":
+            case MUSEUMS:
                 CRUDMuseumsBBDD museumsBBDD= CRUDMuseumsBBDD.getInstance();
                 artElements.addAll(museumsBBDD.read("1"));
                 museumsBBDD.closeConnection();
                 break;
-            case "artworks":
+            case ARTWORKS:
                 CRUDArtworksBBDD artworksBBDD= CRUDArtworksBBDD.getInstance();
                 artElements.addAll(artworksBBDD.read("1"));
                 artworksBBDD.closeConnection();
@@ -34,23 +35,23 @@ public class ConsultasBBDD {
         return artElements;
     }
 
-    public static List<ArtElement> filterArtElementName(String category, String condition) throws SQLException{
+    public static List<ArtElement> filterArtElementName(ArtElementType category, String condition) throws SQLException{
         List<ArtElement> artElements=new ArrayList<>();
 
         switch (category){
-            case "artists":
+            case ARTISTS:
                 CRUDArtistsBBDD artistsBBDD= CRUDArtistsBBDD.getInstance();
-                artElements.addAll(artistsBBDD.read("name="+condition));
+                artElements.addAll(artistsBBDD.read("name='"+condition+"'"));
                 artistsBBDD.closeConnection();
                 break;
-            case "museums":
+            case MUSEUMS:
                 CRUDMuseumsBBDD museumsBBDD= CRUDMuseumsBBDD.getInstance();
-                artElements.addAll(museumsBBDD.read("name="+condition));
+                artElements.addAll(museumsBBDD.read("name='"+condition+"'"));
                 museumsBBDD.closeConnection();
                 break;
-            case "artworks":
+            case ARTWORKS:
                 CRUDArtworksBBDD artworksBBDD= CRUDArtworksBBDD.getInstance();
-                artElements.addAll(artworksBBDD.read("name="+condition));
+                artElements.addAll(artworksBBDD.read("name='"+condition+"'"));
                 artworksBBDD.closeConnection();
                 break;
         }
@@ -58,23 +59,23 @@ public class ConsultasBBDD {
         return artElements;
     }
 
-    public static List<ArtElement> filterArtElementId(String category, String condition) throws SQLException{
+    public static List<ArtElement> filterArtElementId(ArtElementType category, String condition) throws SQLException{
         List<ArtElement> artElements=new ArrayList<>();
 
         switch (category){
-            case "artists":
+            case ARTISTS:
                 CRUDArtistsBBDD artistsBBDD= CRUDArtistsBBDD.getInstance();
-                artElements.addAll(artistsBBDD.read("id="+condition));
+                artElements.addAll(artistsBBDD.read("id='"+condition+"'"));
                 artistsBBDD.closeConnection();
                 break;
-            case "museums":
+            case MUSEUMS:
                 CRUDMuseumsBBDD museumsBBDD= CRUDMuseumsBBDD.getInstance();
-                artElements.addAll(museumsBBDD.read("id="+condition));
+                artElements.addAll(museumsBBDD.read("id='"+condition+"'"));
                 museumsBBDD.closeConnection();
                 break;
-            case "artworks":
+            case ARTWORKS:
                 CRUDArtworksBBDD artworksBBDD= CRUDArtworksBBDD.getInstance();
-                artElements.addAll(artworksBBDD.read("id="+condition));
+                artElements.addAll(artworksBBDD.read("id='"+condition+"'"));
                 artworksBBDD.closeConnection();
                 break;
         }
@@ -111,7 +112,7 @@ public class ConsultasBBDD {
 
     public static User modifyUserBBDD(User oldUser,User newUser){
         CRUDUserBBDD userBBDD=CRUDUserBBDD.getInstance();
-        userBBDD.update(newUser,"username="+oldUser.getUsername());
+        userBBDD.update(newUser,"username='"+oldUser.getUsername()+"'");
         userBBDD.closeConnection();
         return newUser;
     }

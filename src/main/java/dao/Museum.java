@@ -140,12 +140,12 @@ public class Museum implements ArtElement{
         if (this == o) return true;
         if (!(o instanceof Museum)) return false;
         Museum museum = (Museum) o;
-        return Objects.equals(id, museum.id) && Objects.equals(name, museum.name) && Objects.equals(street, museum.street) && Objects.equals(openingHour, museum.openingHour) && Objects.equals(closingHour, museum.closingHour) && Objects.equals(phone, museum.phone) && Objects.equals(description, museum.description) && Objects.equals(price, museum.price) && Objects.equals(webpageUrl, museum.webpageUrl) && Objects.equals(wiki, museum.wiki) && Objects.equals(googleMaps, museum.googleMaps);
+        return Objects.equals(name, museum.name) && Objects.equals(street, museum.street) && Objects.equals(openingHour, museum.openingHour) && Objects.equals(closingHour, museum.closingHour) && Objects.equals(phone, museum.phone) && Objects.equals(description, museum.description) && Objects.equals(price, museum.price) && Objects.equals(webpageUrl, museum.webpageUrl) && Objects.equals(wiki, museum.wiki) && Objects.equals(googleMaps, museum.googleMaps);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, street, openingHour, closingHour, phone, description, price, webpageUrl, wiki, googleMaps);
+        return Objects.hash(name, street, openingHour, closingHour, phone, description, price, webpageUrl, wiki, googleMaps);
     }
 
     @Override
@@ -153,6 +153,6 @@ public class Museum implements ArtElement{
         if (this == o) return 0;
         if (!(o instanceof Museum)) throw new RuntimeException();
         Museum museum = (Museum) o;
-        return getId().compareTo(museum.getId());
+        return getName().compareTo(museum.getName());
     }
 }
