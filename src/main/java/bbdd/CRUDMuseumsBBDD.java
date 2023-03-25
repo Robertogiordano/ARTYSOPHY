@@ -9,7 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 
-public class CRUDMuseumsBBDD implements DAOInterface {
+class CRUDMuseumsBBDD implements DAOInterface {
     private ConnectionManager connManager;
     private static CRUDMuseumsBBDD instance;
 

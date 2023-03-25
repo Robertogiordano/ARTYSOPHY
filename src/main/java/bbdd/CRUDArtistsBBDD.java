@@ -12,7 +12,7 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class CRUDArtistsBBDD implements DAOInterface {
+class CRUDArtistsBBDD implements DAOInterface {
     private ConnectionManager connManager;
     private static CRUDArtistsBBDD instance;
 

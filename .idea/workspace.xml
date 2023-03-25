@@ -5,12 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85958f89-e369-4deb-adff-30124249e314" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDUserBBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/manager/GetAllArtistsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/manager/GetAllArtworksCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/manager/GetAllMuseumsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/manager/SeeArtistCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/manager/SeeArtworkCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/manager/SeeMuseumCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/manager/UserLoginCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/manager/UserLogoutCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/manager/UserModifyClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/manager/UserRegisterCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtistsBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtistsBBDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtworksBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtworksBBDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDMuseumsBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDMuseumsBBDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDUserBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDUserBBDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/ConnectionManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/ConsultasVehiculosBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/ConsultasBBDD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/DAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/DAOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/CommandInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/CommandInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/CommandPatternExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/disabled/CommandPatternExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/disabled/HomeCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/getAll/GetAllArtistsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/getAll/GetAllArtworksCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/getAll/GetAllMuseumsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/seeSingleElement/SeeArtistCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/seeSingleElement/SeeArtworkCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/seeSingleElement/SeeMuseumCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/TestCommandInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/TestCommandInvoker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +83,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/manager/disabled" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="manager" />
       <recent name="bbdd" />
@@ -212,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679667860213</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Initial commit">
+      <created>1679669518918</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679669518918</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

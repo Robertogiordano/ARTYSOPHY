@@ -3,15 +3,14 @@ package bbdd;
 
 
 import dao.ArtElement;
-import dao.Artist;
+import dao.User;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-public class ConsultasVehiculosBBDD {
-    public List<ArtElement> getArtElements(String category) throws SQLException {
+public class ConsultasBBDD {
+    public static List<ArtElement> getArtElements(String category) throws SQLException {
         List<ArtElement> artElements=new ArrayList<>();
 
         switch (category){
@@ -35,7 +34,7 @@ public class ConsultasVehiculosBBDD {
         return artElements;
     }
 
-    public List<ArtElement> filterArtElementName(String category, String condition) throws SQLException{
+    public static List<ArtElement> filterArtElementName(String category, String condition) throws SQLException{
         List<ArtElement> artElements=new ArrayList<>();
 
         switch (category){
@@ -59,7 +58,7 @@ public class ConsultasVehiculosBBDD {
         return artElements;
     }
 
-    public List<ArtElement> filterArtElementId(String category, String condition) throws SQLException{
+    public static List<ArtElement> filterArtElementId(String category, String condition) throws SQLException{
         List<ArtElement> artElements=new ArrayList<>();
 
         switch (category){
@@ -81,5 +80,29 @@ public class ConsultasVehiculosBBDD {
         }
 
         return artElements;
+    }
+
+    public static User checkLogin(User user){
+        CRUDUserBBDD userBBDD=CRUDUserBBDD.getInstance();
+        try {
+            userBBDD.read(user.getUsername(), user.getPassword());
+            userBBDD.closeConnection();
+            return user;
+        } catch (SQLException e) {
+            return null;
+        }
+    }
+
+    public static void registerUserBBDD(User user){
+        CRUDUserBBDD userBBDD=CRUDUserBBDD.getInstance();
+        userBBDD.create(user);
+        userBBDD.closeConnection();
+    }
+
+    public static User modifyUserBBDD(User oldUser,User newUser){
+        CRUDUserBBDD userBBDD=CRUDUserBBDD.getInstance();
+        userBBDD.update(newUser,"username="+oldUser.getUsername());
+        userBBDD.closeConnection();
+        return newUser;
     }
 }

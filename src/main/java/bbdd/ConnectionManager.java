@@ -2,7 +2,7 @@ package bbdd;
 
 import java.sql.*;
 
-public class ConnectionManager {
+class ConnectionManager {
     public Connection conn;
     private static final String URL = "jdbc:mysql://localhost:3306/artysophy";
     private static final String USER = "root";

@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CRUDUserBBDD {
+class CRUDUserBBDD {
     private ConnectionManager connManager;
     private static CRUDUserBBDD instance;
 
@@ -49,7 +49,7 @@ public class CRUDUserBBDD {
 
 
     public User read(String username, String password) throws SQLException {
-        String query = "SELECT * FROM Museum WHERE username"+username+"and password="+password;
+        String query = "SELECT * FROM User WHERE username"+username+"and password="+password;
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query);
              ResultSet rs = stmt.executeQuery()) {
             if (rs.next()) {
@@ -62,7 +62,7 @@ public class CRUDUserBBDD {
 
 
     public void update(User u, String condition) {
-        String query = "UPDATE Museum SET name=?, surnames=?, username=?, email=?, password=? WHERE "+condition;
+        String query = "UPDATE User SET name=?, surnames=?, username=?, email=?, password=? WHERE "+condition;
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurnames());
@@ -78,7 +78,7 @@ public class CRUDUserBBDD {
 
     public void delete(User u) {
 
-        String query = "DELETE FROM Museum WHERE name=?, surnames=?, username=?, email=?, password=?";
+        String query = "DELETE FROM User WHERE name=?, surnames=?, username=?, email=?, password=?";
         try (PreparedStatement stmt = connManager.conn.prepareStatement(query)) {
             stmt.setString(1, u.getName());
             stmt.setString(2, u.getSurnames());
