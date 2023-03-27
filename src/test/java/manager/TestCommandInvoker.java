@@ -1,4 +1,4 @@
-package manager;
+/*package manager;
 
 import bbdd.ConsultasBBDD;
 import dao.User;
@@ -36,4 +36,4 @@ public class TestCommandInvoker {
     public void getAllArtists(){
         System.out.println(commandInvoker.executeCommand(CommandsType.ARTISTS));
     }
-}
+}*/

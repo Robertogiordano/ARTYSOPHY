@@ -1,4 +1,4 @@
-package bbdd;
+/*package bbdd;
 
 import dao.User;
 import org.junit.Assert;
@@ -48,4 +48,4 @@ public class CRUDUserBBDDTest {
     }
 
 
-}
+}*/

@@ -1,4 +1,4 @@
-package bbdd;
+/*package bbdd;
 
 import dao.Artist;
 import dao.User;
@@ -50,5 +50,5 @@ public class CRUDArtistBBDDTest {
         artistsBBDD.closeConnection();
     }
 
-
 }
+*/

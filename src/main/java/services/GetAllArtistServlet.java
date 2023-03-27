@@ -19,15 +19,15 @@ import dao.User;
 import manager.CommandInvoker;
 import manager.CommandsType;
 
-@WebServlet(urlPatterns = "/getArtits")
+@WebServlet(urlPatterns = "/getAllArtist")
 public class GetAllArtistServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 	
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    response.setContentType("text/html;charset=UTF-8");
 
-	    User user = new User("Laura", null, null, null, "135246");
+	    User user = new User("Laura", "", "", "", "135246");
 	    CommandInvoker invoker = new CommandInvoker(user);
 	    CommandsType commandType = CommandsType.ARTISTS;
 	    List<Object> artists = invoker.executeCommand(commandType);

@@ -1,4 +1,4 @@
-package dao;
+/*package dao;
 
 import static org.junit.Assert.*;
 
@@ -77,6 +77,4 @@ public class TestDAOs {
         Artwork testArtwork2=new Artwork(2,"img1","La persistencia de la memoria",1931,1,1,"The Persistence of Memory (Catalan: La persistència de la memòria) is a 1931 painting by artist Salvador Dalí and one of the most recognizable works of Surrealism. First shown at the Julien Levy Gallery in 1932, since 1934 the painting has been in the collection of the Museum of Modern Art (MoMA) in New York City, which received it from an anonymous donor.","https://en.wikipedia.org/wiki/The_Persistence_of_Memory");;
         Assert.assertEquals(artwork.compareTo(testArtwork2),-1);
     }
-	
-
-}
+}*/

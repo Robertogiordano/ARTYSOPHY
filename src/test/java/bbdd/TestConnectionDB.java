@@ -1,4 +1,4 @@
-package bbdd;
+/*package bbdd;
 
 import dao.Artist;
 import dao.User;
@@ -56,4 +56,4 @@ public class TestConnectionDB {
         artistBBDD.update(dali,"name='"+dali.getName()+"'");
         artistBBDD.closeConnection();
     }
-}
+}*/

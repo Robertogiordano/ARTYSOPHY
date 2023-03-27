@@ -5,29 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85958f89-e369-4deb-adff-30124249e314" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/bbdd/ArtElementType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/bbdd/CRUDArtistBBDDTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/bbdd/CRUDArtworkBBDDTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/bbdd/CRUDMuseumBBDDTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/bbdd/CRUDUserBBDDTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/services/GetAllArtistServletTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_2.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtistsBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtistsBBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtworksBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDArtworksBBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDMuseumsBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDMuseumsBBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/CRUDUserBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/CRUDUserBBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/bbdd/ConsultasBBDD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/bbdd/ConsultasBBDD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Artist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Artist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Artwork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Artwork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dao/Museum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/Museum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/GetAllArtistsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/GetAllArtistsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/GetAllArtworksCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/GetAllArtworksCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/GetAllMuseumsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/GetAllMuseumsCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/SeeArtistCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/SeeArtistCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/SeeArtworkCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/SeeArtworkCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/SeeMuseumCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/SeeMuseumCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Artysophy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Artysophy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/GetAllArtistServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/GetAllArtistServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/GetAllMuseumServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/GetAllMuseumServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/bbdd/CRUDArtistBBDDTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bbdd/CRUDArtistBBDDTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/bbdd/CRUDArtworkBBDDTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bbdd/CRUDArtworkBBDDTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/bbdd/CRUDMuseumBBDDTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bbdd/CRUDMuseumBBDDTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/bbdd/CRUDUserBBDDTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bbdd/CRUDUserBBDDTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/bbdd/TestConnectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bbdd/TestConnectionDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/dao/TestDAOs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/dao/TestDAOs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/manager/TestConsultaVehiculos.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/TestCommandInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/TestCommandInvoker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/services/PruebaArtits.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,17 +64,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/robertogiordano/eclipse-workspace/GestionVehiculos&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/robertogiordano/eclipse-workspace/GestionVehiculos",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/manager/disabled" />
@@ -91,7 +88,7 @@
       <recent name="manager" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CRUDArtworkBBDDTest.createArtworkTest">
+  <component name="RunManager" selected="JUnit.GetAllArtistServletTest.testDoGet">
     <configuration name="CRUDArtworkBBDDTest.createArtworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Artysophy" />
       <extension name="coverage">
@@ -124,49 +121,49 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CRUDArtworkBBDDTest.readAllArtworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GetAllArtistServletTest.testDoGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Artysophy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="bbdd.*" />
+          <option name="PATTERN" value="services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="bbdd" />
-      <option name="MAIN_CLASS_NAME" value="bbdd.CRUDArtworkBBDDTest" />
-      <option name="METHOD_NAME" value="readAllArtworkTest" />
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.GetAllArtistServletTest" />
+      <option name="METHOD_NAME" value="testDoGet" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CRUDArtworkBBDDTest.readArtworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PruebaArtits.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Artysophy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="bbdd.*" />
+          <option name="PATTERN" value="services.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="bbdd" />
-      <option name="MAIN_CLASS_NAME" value="bbdd.CRUDArtworkBBDDTest" />
-      <option name="METHOD_NAME" value="readArtworkTest" />
+      <option name="PACKAGE_NAME" value="services" />
+      <option name="MAIN_CLASS_NAME" value="services.PruebaArtits" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CRUDArtworkBBDDTest.updateArtworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestDAOs.printArtistTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Artysophy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="bbdd.*" />
+          <option name="PATTERN" value="dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="bbdd" />
-      <option name="MAIN_CLASS_NAME" value="bbdd.CRUDArtworkBBDDTest" />
-      <option name="METHOD_NAME" value="updateArtworkTest" />
+      <option name="PACKAGE_NAME" value="dao" />
+      <option name="MAIN_CLASS_NAME" value="dao.TestDAOs" />
+      <option name="METHOD_NAME" value="printArtistTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -174,11 +171,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GetAllArtistServletTest.testDoGet" />
+        <item itemvalue="JUnit.TestDAOs.printArtistTest" />
+        <item itemvalue="JUnit.PruebaArtits.test" />
         <item itemvalue="JUnit.CRUDArtworkBBDDTest.createArtworkTest" />
         <item itemvalue="JUnit.CRUDArtworkBBDDTest.deleteArtworkTest" />
-        <item itemvalue="JUnit.CRUDArtworkBBDDTest.readAllArtworkTest" />
-        <item itemvalue="JUnit.CRUDArtworkBBDDTest.updateArtworkTest" />
-        <item itemvalue="JUnit.CRUDArtworkBBDDTest.readArtworkTest" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +251,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679713340118</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Initial commit">
+      <created>1679745734658</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1679745734658</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Initial commit">
+      <created>1679745851662</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1679745851662</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

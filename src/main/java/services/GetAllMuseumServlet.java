@@ -19,7 +19,7 @@ import dao.User;
 import manager.CommandInvoker;
 import manager.CommandsType;
 
-@WebServlet(urlPatterns = "/getArtits")
+@WebServlet(urlPatterns = "/getMuseums")
 public class GetAllMuseumServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 	
