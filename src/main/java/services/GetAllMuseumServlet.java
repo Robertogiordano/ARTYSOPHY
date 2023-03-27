@@ -35,7 +35,7 @@ public class GetAllMuseumServlet extends HttpServlet {
 	    PrintWriter out = response.getWriter();
 	    out.println("<html>");
 	    out.println("<body>");
-	    out.println("<h1>Lista de artistas:</h1>");
+	    out.println("<h1>Lista de museos:</h1>");
 	    for(Object museum : museums) {
 	        out.println("<p>" + museum.toString() + "</p>");
 	    }
