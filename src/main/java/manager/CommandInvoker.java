@@ -16,7 +16,7 @@ public class CommandInvoker {
     private static Integer museum_ActiveId=-1;
     private static User user=null;
 
-    public CommandInvoker(User user) {
+    private CommandInvoker(User user) {
         commands.put(CommandsType.ARTISTS, new GetAllArtistsCommand());
         commands.put(CommandsType.MUSEUM_GUIDE, new GetAllMuseumsCommand());
         commands.put(CommandsType.ART_GALERY, new GetAllArtworksCommand());
