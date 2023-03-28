@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.json.JSONArray;
+
 import bbdd.ArtElementType;
 import bbdd.ConsultasBBDD;
 import dao.ArtElement;
@@ -19,12 +20,25 @@ import dao.User;
 import manager.CommandInvoker;
 import manager.CommandsType;
 
-@WebServlet(urlPatterns = "/getMuseums")
-public class GetAllMuseumServlet extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-	
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+/**
+ * Servlet implementation class GetAllMuseumsServlet
+ */
+@WebServlet("/GetAllMuseumsServlet")
+public class GetAllMuseumsServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public GetAllMuseumsServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    response.setContentType("text/html;charset=UTF-8");
 
 	    User user = new User("Laura", null, null, null, "135246");
@@ -49,7 +63,15 @@ public class GetAllMuseumServlet extends HttpServlet {
 	        JSONArray museumsArray = new JSONArray(museumsList);
 	        return museumsArray;
 	    } catch (SQLException e) {
-	        throw new RuntimeException("Impossible get all artists");
+	        throw new RuntimeException("Impossible get all museums");
 	    }
 	}
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
 }
