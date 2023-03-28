@@ -2,7 +2,7 @@
 <html>
 	<body>
 		<h2>
-			<form method="get" action="/getAllArtist">
+			<form method="get" action="./getAllArtist">
 			 <pre>
 			 Enter your name: <input type="text" name=t1>
 			 <input type=submit> <input type=reset>
