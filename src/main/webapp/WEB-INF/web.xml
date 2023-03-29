@@ -4,16 +4,17 @@
     xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee 
     https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
     version="6.0">
+    
 	<display-name>Artysophy</display-name>
 	
 	<servlet>
-		<servlet-name>GetAllArtistServlet</servlet-name>
-		<servlet-class>services.GetAllArtistServlet</servlet-class>
+		<servlet-name>GetSeeArtist</servlet-name>
+		<servlet-class>services.GetSeeArtist</servlet-class>
 	</servlet>
 	
 	<servlet-mapping>
-		<servlet-name>GetAllArtistServlet</servlet-name>
-		<url-pattern>/getAllArtist</url-pattern>
+		<servlet-name>GetSeeArtist</servlet-name>
+		<url-pattern>/GetSeeArtist</url-pattern>
 	</servlet-mapping>
 	
 	

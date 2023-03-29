@@ -1,11 +1,13 @@
 /*package manager;
 
 import bbdd.ConsultasBBDD;
+import dao.Artist;
 import dao.User;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class TestCommandInvoker {
     User user=new User("Roberto","Giordano", "rgiordano","rgiordano@al.uloyola.es","qwertyuiop");
@@ -35,5 +37,14 @@ public class TestCommandInvoker {
     @Test
     public void getAllArtists(){
         System.out.println(commandInvoker.executeCommand(CommandsType.ARTISTS));
+    }
+
+    @Test
+    public void getAllArtistsTestServletLaura(){
+        CommandInvoker invoker = new CommandInvoker(user);
+        CommandsType commandType = CommandsType.ARTISTS;
+        List<Object> artists = invoker.executeCommand(commandType);
+
+        artists.stream().forEach(a -> System.out.println(a));
     }
 }*/

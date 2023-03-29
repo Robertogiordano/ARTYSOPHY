@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85958f89-e369-4deb-adff-30124249e314" name="Changes" comment="Initial commit">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_json_json_20230227.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/.classpath" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Artysophy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Artysophy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/services/GetAllArtistServletTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/services/GetAllArtistServletTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/GetAllArtitsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/services/GetAllArtitsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/GetAllArtsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/services/GetAllArtsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/GetAllMuseumsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/services/GetAllMuseumsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/GetSeeArtist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/classes/services/GetSeeArtist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/bbdd/TestConnectionDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/bbdd/TestConnectionDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/manager/TestCommandInvoker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/manager/TestCommandInvoker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +39,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -69,6 +70,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
       <recent name="$PROJECT_DIR$/src/main/java/manager/disabled" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -80,23 +82,7 @@
       <recent name="manager" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GetAllArtistServletTest.testDoGet (1)">
-    <configuration name="CRUDArtworkBBDDTest.createArtworkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Artysophy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="bbdd.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="bbdd" />
-      <option name="MAIN_CLASS_NAME" value="bbdd.CRUDArtworkBBDDTest" />
-      <option name="METHOD_NAME" value="createArtworkTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestCommandInvoker.getAllArtistsTestServletLaura">
     <configuration name="GetAllArtistServletTest.testDoGet (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Artysophy" />
       <extension name="coverage">
@@ -130,17 +116,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PruebaArtits.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestCommandInvoker.getAllArtistsTestServletLaura" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Artysophy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="services.*" />
+          <option name="PATTERN" value="manager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="services" />
-      <option name="MAIN_CLASS_NAME" value="services.PruebaArtits" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="PACKAGE_NAME" value="manager" />
+      <option name="MAIN_CLASS_NAME" value="manager.TestCommandInvoker" />
+      <option name="METHOD_NAME" value="getAllArtistsTestServletLaura" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestConnectionDB.getArtElementsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Artysophy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="bbdd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="bbdd" />
+      <option name="MAIN_CLASS_NAME" value="bbdd.TestConnectionDB" />
+      <option name="METHOD_NAME" value="getArtElementsTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -163,19 +165,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.TestCommandInvoker.getAllArtistsTestServletLaura" />
+      <item itemvalue="JUnit.TestConnectionDB.getArtElementsTest" />
       <item itemvalue="JUnit.GetAllArtistServletTest.testDoGet (1)" />
-      <item itemvalue="JUnit.CRUDArtworkBBDDTest.createArtworkTest" />
       <item itemvalue="JUnit.GetAllArtistServletTest.testDoGet" />
-      <item itemvalue="JUnit.PruebaArtits.test" />
       <item itemvalue="JUnit.TestDAOs.printArtistTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestCommandInvoker.getAllArtistsTestServletLaura" />
+        <item itemvalue="JUnit.TestConnectionDB.getArtElementsTest" />
         <item itemvalue="JUnit.GetAllArtistServletTest.testDoGet (1)" />
         <item itemvalue="JUnit.GetAllArtistServletTest.testDoGet" />
         <item itemvalue="JUnit.TestDAOs.printArtistTest" />
-        <item itemvalue="JUnit.PruebaArtits.test" />
-        <item itemvalue="JUnit.CRUDArtworkBBDDTest.createArtworkTest" />
       </list>
     </recent_temporary>
   </component>
@@ -272,7 +274,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679957890545</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Initial commit">
+      <created>1679990720270</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1679990720270</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

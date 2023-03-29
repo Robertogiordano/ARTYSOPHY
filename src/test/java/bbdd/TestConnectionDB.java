@@ -56,4 +56,9 @@ public class TestConnectionDB {
         artistBBDD.update(dali,"name='"+dali.getName()+"'");
         artistBBDD.closeConnection();
     }
+
+    @Test
+    public void getArtElementsTest() throws SQLException {
+       System.out.println(ConsultasBBDD.getArtElements(ArtElementType.ARTISTS));
+    }
 }*/
